@@ -7,18 +7,19 @@ using Xamarin.Forms;
 
 using FBWTracker.Models;
 using FBWTracker.Views;
+using FBWTracker.Data;
 
 namespace FBWTracker.ViewModels
 {
     public class DataViewModel : BaseViewModel
     {
-        public ObservableCollection<TrainingDetails> Data { get; set; }
+        public ObservableCollection<TrainingDetail> Trainings { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public DataViewModel()
         {
-            Title = "Browse";
-            Data = new ObservableCollection<TrainingDetails>();
+            Title = "FBW Trainings";
+            Trainings = new ObservableCollection<TrainingDetail>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
@@ -38,11 +39,11 @@ namespace FBWTracker.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                Trainings.Clear();
+                var trainings = await App.Database.GetTrainingsAsync();
+                foreach (var t in trainings)
                 {
-                    Items.Add(item);
+                    Trainings.Add(t);
                 }
             }
             catch (Exception ex)

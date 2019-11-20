@@ -1,38 +1,49 @@
-﻿using SQLite;
+﻿using FBWTracker.Models;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FBWTracker.Data
 {
-    public class TodoItemDatabase
+    public class TrackerDatabase
     {
         readonly SQLiteAsyncConnection database;
 
-        public TodoItemDatabase(string dbPath)
+        public TrackerDatabase(string dbPath)
         {
             database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<TodoItem>().Wait();
+            database.CreateTableAsync<TrainingDetail>().Wait();
         }
 
-        public Task<List<TodoItem>> GetItemsAsync()
+        public Task<List<TrainingDetail>> GetTrainingsAsync()
         {
-            return database.Table<TodoItem>().ToListAsync();
+            return database.Table<TrainingDetail>().ToListAsync();
         }
 
-        public Task<List<TodoItem>> GetItemsNotDoneAsync()
+        public Task<List<TrainingDetail>> GetTrainingsNotDoneAsync()
         {
-            return database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+            return database.QueryAsync<TrainingDetail>("SELECT * FROM [TrainingDetails] WHERE [Done] = 0");
         }
 
-        public Task<TodoItem> GetItemAsync(int id)
+        public Task<TrainingDetail> GetTrainingAsync(string id)
         {
-            return database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            var guidID = new Guid(id);
+            return database.Table<TrainingDetail>().Where(i => i.ID == guidID).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(TodoItem item)
+        public Task<TrainingDetail> GetLastTrainingABAsync()
         {
-            if (item.ID != 0)
+
+            return database.Table<TrainingDetail>().OrderByDescending(x => x.Date).Skip(1).
+                FirstOrDefaultAsync();
+
+        }
+
+        public Task<int> SaveTrainingAsync(TrainingDetail item)
+        {
+            if (item.ID == null)
             {
                 return database.UpdateAsync(item);
             }
@@ -42,7 +53,7 @@ namespace FBWTracker.Data
             }
         }
 
-        public Task<int> DeleteItemAsync(TodoItem item)
+        public Task<int> DeleteTrainingAsync(TrainingDetail item)
         {
             return database.DeleteAsync(item);
         }
