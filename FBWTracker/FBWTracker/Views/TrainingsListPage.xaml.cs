@@ -41,7 +41,12 @@ namespace FBWTracker.Views
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new AddTrainingPage()));
+            var lastTraining = await App.Database.GetLastTrainingABAsync();
+            if (lastTraining == null)
+            {
+                lastTraining = new TrainingDetail();
+            }
+            await Navigation.PushModalAsync(new NavigationPage(new AddTrainingPage(lastTraining)));
         }
 
         protected override void OnAppearing()

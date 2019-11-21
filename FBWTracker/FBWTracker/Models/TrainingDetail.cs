@@ -24,7 +24,7 @@ namespace FBWTracker.Models
         public int? DeadliftS { get; set; }
         public int? DeadliftQ { get; set; }
         //wyciskanie leżąc
-        public double BarbellPressG { get; set; }
+        public double BarbellPressKG { get; set; }
         public int? BarbellPressS { get; set; }
         public int? BarbellPressQ { get; set; }
         //zołnierskie

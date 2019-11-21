@@ -3,12 +3,175 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Class="FBWTracker.Views.AddTrainingPage"
-             Title="AddTrainingView">
+             Title="Szczegóły treningu">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Data treningu " Grid.Row="0" Grid.Column="0" />
+                <Entry Text="{Binding Date}" Placeholder="2019-11-21 21:21" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Traning A?" Grid.Row="0" Grid.Column="1" />
+                <Entry Text="{Binding TrainingA}" Placeholder="true" Grid.Row="1" Grid.Column="1" />
+                <Label Text="Komentarz" Grid.Row="0" Grid.Column="2" />
+                <Entry Text="{Binding Comment}" Placeholder="Komentarz co do treningu" Grid.Row="1" Grid.Column="2" />
+            </Grid>              
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Przysiad kg" Grid.Row="0" Grid.Column="0" />
+                <Entry Text="{Binding SquatsKG}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Przysiad serie" Grid.Row="0" Grid.Column="1" />
+                <Entry Text="{Binding SquatsS}" Placeholder="5" Grid.Row="1" Grid.Column="1" />
+                <Label Text="Przysiad powt." Grid.Row="0" Grid.Column="2" />
+                <Entry Text="{Binding SquatsQ}" Placeholder="5" Grid.Row="1" Grid.Column="2" />
+            </Grid>  
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Martwy kg" Grid.Row="0" Grid.Column="0" />
+                <Entry Text="{Binding DeadlifKG}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Przysiad serie" Grid.Row="0" Grid.Column="1" />
+                <Entry Text="{Binding DeadlifS}" Placeholder="5" Grid.Row="1" Grid.Column="1" />
+                <Label Text="Przysiad powt." Grid.Row="0" Grid.Column="2" />
+                <Entry Text="{Binding DeadlifQ}" Placeholder="5" Grid.Row="1" Grid.Column="2" />
+            </Grid>            
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Klata ławka kg" Grid.Row="0" Grid.Column="0" />
+                <Entry Text="{Binding BarbellPressKG}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="klata serie" Grid.Row="0" Grid.Column="1" />
+                <Entry Text="{Binding BarbellPressS}" Placeholder="5" Grid.Row="1" Grid.Column="1" />
+                <Label Text="klata powt." Grid.Row="0" Grid.Column="2" />
+                <Entry Text="{Binding BarbellPressQ}" Placeholder="5" Grid.Row="1" Grid.Column="2" />
+            </Grid>            
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="OHP kg" Grid.Row="0" Grid.Column="0" />
+                <Entry Text="{Binding OHPKG}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="OHP serie" Grid.Row="0" Grid.Column="1" />
+                <Entry Text="{Binding OHPS}" Placeholder="5" Grid.Row="1" Grid.Column="1" />
+                <Label Text="OHP powt." Grid.Row="0" Grid.Column="2" />
+                <Entry Text="{Binding OHPS}" Placeholder="5" Grid.Row="1" Grid.Column="2" />
+            </Grid>            
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Wiosło kg" Grid.Row="0" Grid.Column="0" />
+                <Entry Text="{Binding BORKG}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Wiosło serie" Grid.Row="0" Grid.Column="1" />
+                <Entry Text="{Binding BORKG}" Placeholder="5" Grid.Row="1" Grid.Column="1" />
+                <Label Text="Wiosło powt." Grid.Row="0" Grid.Column="2" />
+                <Entry Text="{Binding BORKG}" Placeholder="5" Grid.Row="1" Grid.Column="2" />
+            </Grid>            
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="W. podciaganie kg" Grid.Row="0" Grid.Column="0" />
+                <Entry Text="{Binding CChinUpKG}" Placeholder="0" Grid.Row="1" Grid.Column="0" />
+                <Label Text="W. podciaganie serie" Grid.Row="0" Grid.Column="1" />
+                <Entry Text="{Binding CChinUpS}" Placeholder="5" Grid.Row="1" Grid.Column="1" />
+                <Label Text="W. podciaganie powt." Grid.Row="0" Grid.Column="2" />
+                <Entry Text="{Binding CChinUpQ}" Placeholder="5" Grid.Row="1" Grid.Column="2" />
+            </Grid>            
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Entry Text="" Placeholder="9.99" Grid.Row="0" Grid.Column="0" VerticalOptions="StartAndExpand"/>
+                <Entry Text="" Placeholder="9.99" Grid.Row="0" Grid.Column="1" VerticalOptions="StartAndExpand"/>
+                <Entry Text="" Placeholder="9.99" Grid.Row="0" Grid.Column="2" VerticalOptions="StartAndExpand"/>
+            </Grid>
+            <Label Text="Name" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Grid Here -->
+                <Entry Placeholder="Password" Text="" Grid.Row="0" Grid.Column="0" VerticalOptions="StartAndExpand"/>
+                <Label Text="USD" FontAttributes="Bold" FontSize="18" TextColor="Green" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0, 0, 5, 0"/>
+            </Grid>
+            <Label Text="Name" />
+            <Entry Text="{Binding Name}" />
+            <Label Text="Notes" />
+            <Entry Text="{Binding Notes}" />
+            <Label Text="Done" />
+            <Switch IsToggled="{Binding Done}" />
+            <Button Text="Save" Clicked="OnSaveClicked" />
+            <Button Text="Delete" Clicked="OnDeleteClicked" />
+            <Button Text="Cancel" Clicked="OnCancelClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

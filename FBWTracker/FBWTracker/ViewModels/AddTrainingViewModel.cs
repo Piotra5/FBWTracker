@@ -6,8 +6,16 @@
 //{
 //    public class AddTrainingViewModel : BaseViewModel
 //    {
+//        var estimatedTraining = new TrainingDetail();
+
+//        public AddTrainingViewModel(TrainingDetail lastTraining)
+//        {
+//            estimatedTraining = lastTraining;
+//            Date = DateTime.Now;
+//        }
+
 //        public string Date { get; set; }
-//        public DateTime? TrainingDate { get; set; } = DateTime.Now;
+//        public DateTime? TrainingDate { get; set; }
 //        public bool TrainingA { get; set; } = estimatedTraining.TrainingA;
 //        public bool Done { get; set; } = estimatedTraining.Done;
 //        public string Comment { get; set; } = estimatedTraining.Comment;

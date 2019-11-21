@@ -12,23 +12,17 @@ namespace FBWTracker.Views
     public partial class AddTrainingPage : ContentPage
     {
         TrainingDetail viewModel;
-        TrainingDetail lastTraining;
-        public AddTrainingPage()
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public AddTrainingPage(TrainingDetail lastTraining)
         {
+
             InitializeComponent();
-            BindingContext = viewModel = new TrainingDetail();
+            BindingContext = viewModel = CreateViewModel(lastTraining);
         }
 
         protected override async void OnAppearing()
         {
-            lastTraining = await App.Database.GetLastTrainingABAsync();
-            if (lastTraining == null)
-            {
-                lastTraining = new TrainingDetail();
-            }
-            lastTraining.TrainingA = true;
-            viewModel = CreateViewModel(lastTraining);
-
             base.OnAppearing();
         }
 
@@ -70,7 +64,7 @@ namespace FBWTracker.Views
                 DeadliftS = estimatedTraining.DeadliftS,
                 DeadliftQ = estimatedTraining.DeadliftQ,
                 //wyciskanie leżąc
-                BarbellPressG = estimatedTraining.BarbellPressG + 2.5,
+                BarbellPressKG = estimatedTraining.BarbellPressKG + 2.5,
                 BarbellPressS = estimatedTraining.BarbellPressS,
                 BarbellPressQ = estimatedTraining.BarbellPressQ,
                 //zołnierskie
