@@ -81,7 +81,7 @@ namespace FBWTracker.Views
                 CChinUpQ = estimatedTraining.CChinUpQ,
 
                 //barki bokiem
-                DLRG = estimatedTraining.DLRG + 2.5,
+                DLRKG = estimatedTraining.DLRKG + 2.5,
                 DLRS = estimatedTraining.DLRS,
                 DLRQ = estimatedTraining.DLRQ,
 
@@ -97,7 +97,7 @@ namespace FBWTracker.Views
                 BicS = estimatedTraining.BicS,
                 BicQ = estimatedTraining.BicQ,
 
-                AllahsG = estimatedTraining.AllahsG + 2.5,
+                AllahsKG = estimatedTraining.AllahsKG + 2.5,
                 AllahsS = estimatedTraining.AllahsS,
                 AllahsQ = estimatedTraining.AllahsQ,
 

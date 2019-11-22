@@ -41,7 +41,7 @@ namespace FBWTracker.Models
         public int? CChinUpQ { get; set; }
 
         //barki bokiem
-        public double DLRG { get; set; }
+        public double DLRKG { get; set; }
         public int? DLRS { get; set; }
         public int? DLRQ { get; set; }
 
@@ -57,7 +57,7 @@ namespace FBWTracker.Models
         public int? BicS { get; set; }
         public int? BicQ { get; set; }
 
-        public double AllahsG { get; set; }
+        public double AllahsKG { get; set; }
         public int? AllahsS { get; set; }
         public int? AllahsQ { get; set; }
 

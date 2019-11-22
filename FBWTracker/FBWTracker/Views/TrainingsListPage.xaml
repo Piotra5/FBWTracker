@@ -26,22 +26,198 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Description}" 
-                                d:Text="Item descripton"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                            <Label Text="{Binding TrainingA}" 
-                                d:Text="Item descripton"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                            <Label Text="{Binding Done}" 
-                                d:Text="Item descripton"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                        <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+                            <Label Text="Komentarz"/>
+                            <Label Text="{Binding Comment}"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Data treningu " Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding Date}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="Traning A?" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding TrainingA}" Grid.Row="1" Grid.Column="1" />
+                            </Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Przysiad kg" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding SquatsKG}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="Przysiad serie" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding SquatsS}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="Przysiad powt." Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding SquatsQ}" Grid.Row="1" Grid.Column="2" />
+                            </Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Martwy kg" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding DeadlifKG}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="Przysiad serie" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding DeadlifS}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="Przysiad powt." Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding DeadlifQ}" Grid.Row="1" Grid.Column="2" />
+                            </Grid>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Klata ławka kg" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding BarbellPressKG}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="klata serie" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding BarbellPressS}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="klata powt." Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding BarbellPressQ}" Grid.Row="1" Grid.Column="2" />
+                            </Grid>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="OHP kg" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding OHPKG}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="OHP serie" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding OHPS}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="OHP powt." Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding OHPS}" Grid.Row="1" Grid.Column="2" />
+                            </Grid>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Wiosło kg" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding BORKG}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="Wiosło serie" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding BORKG}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="Wiosło powt." Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding BORKG}" Grid.Row="1" Grid.Column="2" />
+                            </Grid>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="W. podciaganie kg" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding CChinUpKG}" Grid.Row="1" Grid.Column="0" />
+                                <Label Text="W. podciaganie serie" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding CChinUpS}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="W. podciaganie powt." Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding CChinUpQ}" Grid.Row="1" Grid.Column="2" />
+
+                                <Label Text="Barki bokiem kg" Grid.Row="2" Grid.Column="0" />
+                                <Label Text="{Binding DLRKG}" Grid.Row="3" Grid.Column="0" />
+                                <Label Text="Barki bokiemserie" Grid.Row="2" Grid.Column="1" />
+                                <Label Text="{Binding DLRS}" Grid.Row="3" Grid.Column="1" />
+                                <Label Text="Barki bokiem powt." Grid.Row="2" Grid.Column="2" />
+                                <Label Text="{Binding DLRQ}" Grid.Row="3" Grid.Column="2" />
+
+                                <Label Text="W. klata kg" Grid.Row="4" Grid.Column="0" />
+                                <Label Text="{Binding CBarbellPressKG}" Grid.Row="5" Grid.Column="0" />
+                                <Label Text="W. klata serie" Grid.Row="4" Grid.Column="1" />
+                                <Label Text="{Binding CBarbellPressS}" Grid.Row="5" Grid.Column="1" />
+                                <Label Text="W. klata powt." Grid.Row="4" Grid.Column="2" />
+                                <Label Text="{Binding CBarbellPressQ}" Grid.Row="5" Grid.Column="2" />
+
+                                <Label Text="bic tric kg" Grid.Row="6" Grid.Column="0" />
+                                <Label Text="{Binding BicTricKG}" Grid.Row="7" Grid.Column="0" />
+                                <Label Text="bic tric serie" Grid.Row="6" Grid.Column="1" />
+                                <Label Text="{Binding BicTricS}" Grid.Row="7" Grid.Column="1" />
+                                <Label Text="bic tric powt." Grid.Row="6" Grid.Column="2" />
+                                <Label Text="{Binding BicTricQ}" Grid.Row="7" Grid.Column="2" />
+
+                                <Label Text="bic kg" Grid.Row="8" Grid.Column="0" />
+                                <Label Text="{Binding BicKG}" Grid.Row="9" Grid.Column="0" />
+                                <Label Text="bic serie" Grid.Row="8" Grid.Column="1" />
+                                <Label Text="{Binding BicS}" Grid.Row="9" Grid.Column="1" />
+                                <Label Text="bic powt." Grid.Row="8" Grid.Column="2" />
+                                <Label Text="{Binding BicQ}" Grid.Row="9" Grid.Column="2" />
+
+                                <Label Text="Allah kg" Grid.Row="10" Grid.Column="0" />
+                                <Label Text="{Binding AllahsKG}" Grid.Row="11" Grid.Column="0" />
+                                <Label Text="Allah serie" Grid.Row="10" Grid.Column="1" />
+                                <Label Text="{Binding AllahsS}" Grid.Row="11" Grid.Column="1" />
+                                <Label Text="Allah powt." Grid.Row="10" Grid.Column="2" />
+                                <Label Text="{Binding AllahsQ}" Grid.Row="11" Grid.Column="2" />
+
+                                <Label Text="Deska kg" Grid.Row="12" Grid.Column="0" />
+                                <Label Text="{Binding PlankKG}" Grid.Row="13" Grid.Column="0" />
+                                <Label Text="Deska serie" Grid.Row="12" Grid.Column="1" />
+                                <Label Text="{Binding PlankSeconds}" Grid.Row="13" Grid.Column="1" />
+                                <Label Text="Deska powt." Grid.Row="12" Grid.Column="2" />
+                                <Label Text="{Binding PlankS}" Grid.Row="13" Grid.Column="2" />
+
+                                <Label Text="Łydki kg" Grid.Row="14" Grid.Column="0" />
+                                <Label Text="{Binding CalfKG}" Grid.Row="15" Grid.Column="0" />
+                                <Label Text="Łydki serie" Grid.Row="14" Grid.Column="1" />
+                                <Label Text="{Binding CalfS}" Grid.Row="15" Grid.Column="1" />
+                                <Label Text="Łydki powt." Grid.Row="14" Grid.Column="2" />
+                                <Label Text="{Binding CalfQ}" Grid.Row="15" Grid.Column="2" />
+                            </Grid>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
